@@ -534,11 +534,11 @@ label{
 	cursor:pointer;
 }
 .mini-color{
-	width:16px;
-	height:16px;
-	margin:0px 3px 3px 0px;
+	width:15px;
+	height:15px;
+	margin:0px 0px 0px 0px;
 	float:left;
-	border:1px solid #393939;
+	border:none;;
 }
 .mini-color:hover{
 	cursor:pointer;

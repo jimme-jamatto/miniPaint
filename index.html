@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html dir="ltr" lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -61,7 +61,7 @@
 				<br />
 			</div>
 		</div>
-		<div class="block" id="mouse_info">
+		<div class="block" id="mouse_info" style="display:none;">
 			<span class="trn mouse_info_title">Size:</span>
 			<span id="mouse_info_size"></span><br />
 			
@@ -101,7 +101,7 @@
 				<input style="width:95%;margin-top:5px;" id="zoom_range" type="range" value="100" min="50" max="1000" step="50" oninput="GUI.zoom(this.value, true);" /> 
 			</div>
 		</div>
-		<div id="layers_base">
+		<div id="layers_base" style="display:none;">
 			<b class="trn">Layers</b> <a title="Add new layer" class="layer_add" onclick="EDIT.save_state();LAYER.layer_add();return false;" href="#">+</a>
 			<a title="Move down" onclick="EDIT.save_state();LAYER.move_layer('down');return false;" class="layers_arrow" href="#">&darr;</a>
 			<a title="Move up" onclick="EDIT.save_state();LAYER.move_layer('up');return false;" class="layers_arrow" href="#">&uarr;</a>
@@ -113,7 +113,7 @@
 	<a class="left_mobile_menu" onclick="GUI.toggle('#sidebar_left');return false;" href="#"></a>
 	<a class="right_mobile_menu" onclick="GUI.toggle('#sidebar_right');return false;" href="#"></a>
 </div>
-<div id="main_menu" class="ddsmoothmenu">
+<div id="main_menu" class="ddsmoothmenu" style="display:none;">
 	<ul>
 	<li>
 		<a class="icon file trn" href="#">File</a>
