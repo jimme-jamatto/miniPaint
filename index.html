@@ -59,6 +59,9 @@
 			</div>
 		</div>
         <div class="block" id="action_attributes"></div>
+
+        <a id="logo" href="https://github.com/viliusle/miniPaint" target="_blank">We <span style="color:lightpink">&hearts; &hearts; &hearts;</span> miniPaint</a>
+
         
 	</div>
 	<div id="canvas_wrapper">
@@ -102,8 +105,6 @@
                 <br />
             </div>
         </div>
-
-        <a id="logo" href="https://github.com/viliusle/miniPaint" target="_blank">We <span style="color:lightpink">&hearts;</span> miniPaint!</a>
 
 		<div id="layers_base" style="display:none;">
 			<b class="trn">Layers</b> <a title="Add new layer" class="layer_add" onclick="EDIT.save_state();LAYER.layer_add();return false;" href="#">+</a>
@@ -346,5 +347,11 @@
 
 <script src="config.js"></script>
 <script src="js/main.js"></script>
+
+    <script>
+        document.addEventListener("touchmove", function (event) {
+            event.preventDefault();
+        });
+</script>
 </body>
 </html>
