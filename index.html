@@ -353,10 +353,32 @@
     <script src="js/main.js"></script>
 
     <script>
+        // Fix the awful ipad bounce
         document.addEventListener("touchmove", function (event) {
             event.preventDefault();
         });
     </script>
+
+    <script>
+        // if we have been provided a ?img=xxx, then load it!
+        //   e.g. http://localhost/index.html?img=http://www.hexonomy.com/assets/mandalas.small/12.png
+
+        var search_string = document.location.search;
+        if (0 == search_string.indexOf("?img=")) {
+            var url = search_string.substr(5);
+            url = decodeURIComponent(url);
+            console.log(url);
+
+
+            var user_response = {
+                url: url
+            };
+
+            FILE.file_open_url_handler(user_response);
+        }
+        
+    </script>
+    
 
 
 </body>
