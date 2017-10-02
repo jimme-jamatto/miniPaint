@@ -28,8 +28,7 @@
 </head>
 <body>
 <div id="wrapper">
-	<div id="sidebar_left">
-		<a id="logo" href="">miniPaint</a>
+	<div id="sidebar_left">		
 		<div id="menu_left_container">
 			<noscript>
 				Select object tool, Select area tool, Magic Wand Tool, 
@@ -42,24 +41,6 @@
 		<div id="main_color_container">
 			<input title="Click to change color" type="color" class="color_area" id="main_color" value="#0000ff" onchange="GUI.set_color(this);" />
 			<div style="display:none;" id="main_color_alt" onclick="GUI.toggle_color_select();"></div>
-		</div>
-		<div class="block" id="all_colors"></div>
-		<div class="block">
-			<input type="text" id="color_hex" value="#000000" /><br />
-			<div id="main_color_rgb">
-				<a class="red" href="#" title="Red" onclick="return false;">Red</a>
-				<input id="rgb_r" onKeyUp="GUI.set_color_rgb(this, 'r')" onchange="GUI.set_color_rgb(this, 'r')" type="number" value="255" />
-				<br />				
-				<a class="green" href="#" title="Green" onclick="return false;">Green</a>
-				<input id="rgb_g" onKeyUp="GUI.set_color_rgb(this, 'g')" onchange="GUI.set_color_rgb(this, 'g')" type="number" value="255" />
-				<br />
-				<a class="blue" href="#" title="Blue" onclick="return false;">Blue</a>
-				<input id="rgb_b" onKeyUp="GUI.set_color_rgb(this, 'b')" onchange="GUI.set_color_rgb(this, 'b')" type="number" value="255" />
-				<br />
-				<a class="alpha" href="#" title="Alpha" onclick="return false;">Alpha</a>
-				<input id="rgb_a" onKeyUp="GUI.set_color_rgb(this, 'a')" onchange="GUI.set_color_rgb(this, 'a')" type="number" value="255" />
-				<br />
-			</div>
 		</div>
 		<div class="block" id="mouse_info" style="display:none;">
 			<span class="trn mouse_info_title">Size:</span>
@@ -77,7 +58,8 @@
 				<span id="mouse_info_area"></span><br />
 			</div>
 		</div>
-		<div class="block" id="action_attributes"></div>
+        <div class="block" id="action_attributes"></div>
+        
 	</div>
 	<div id="canvas_wrapper">
 		<canvas style="width:1280px;height:720px;" id="canvas_back"><div class="trn error">Your browser does not support canvas or JavaScript is not enabled.</div></canvas>
@@ -85,9 +67,9 @@
 		<canvas style="width:1280px;height:720px;" id="canvas_front"></canvas>
 		<canvas style="width:1280px;height:720px;" id="canvas_grid"></canvas>
 
-		<div id="resize-w"></div>
-		<div id="resize-h"></div>
-		<div id="resize-wh"></div>
+		<div id="resize-w" style="display:none;"></div>
+		<div id="resize-h" style="display:none;"></div>
+		<div id="resize-wh" style="display:none;"></div>
 	</div>
 	<div id="sidebar_right">
 		<div id="preview">
@@ -101,6 +83,28 @@
 				<input style="width:95%;margin-top:5px;" id="zoom_range" type="range" value="100" min="50" max="1000" step="50" oninput="GUI.zoom(this.value, true);" /> 
 			</div>
 		</div>
+
+        <div class="block" id="all_colors"></div>
+        <div class="block">
+            <input type="text" id="color_hex" value="#000000" /><br />
+            <div id="main_color_rgb">
+                <a class="red" href="#" title="Red" onclick="return false;">Red</a>
+                <input id="rgb_r" onKeyUp="GUI.set_color_rgb(this, 'r')" onchange="GUI.set_color_rgb(this, 'r')" type="number" value="255" />
+                <br />
+                <a class="green" href="#" title="Green" onclick="return false;">Green</a>
+                <input id="rgb_g" onKeyUp="GUI.set_color_rgb(this, 'g')" onchange="GUI.set_color_rgb(this, 'g')" type="number" value="255" />
+                <br />
+                <a class="blue" href="#" title="Blue" onclick="return false;">Blue</a>
+                <input id="rgb_b" onKeyUp="GUI.set_color_rgb(this, 'b')" onchange="GUI.set_color_rgb(this, 'b')" type="number" value="255" />
+                <br />
+                <a class="alpha" href="#" title="Alpha" onclick="return false;">Alpha</a>
+                <input id="rgb_a" onKeyUp="GUI.set_color_rgb(this, 'a')" onchange="GUI.set_color_rgb(this, 'a')" type="number" value="255" />
+                <br />
+            </div>
+        </div>
+
+        <a id="logo" href="https://github.com/viliusle/miniPaint" target="_blank">We <span style="color:lightpink">&hearts;</span> miniPaint!</a>
+
 		<div id="layers_base" style="display:none;">
 			<b class="trn">Layers</b> <a title="Add new layer" class="layer_add" onclick="EDIT.save_state();LAYER.layer_add();return false;" href="#">+</a>
 			<a title="Move down" onclick="EDIT.save_state();LAYER.move_layer('down');return false;" class="layers_arrow" href="#">&darr;</a>

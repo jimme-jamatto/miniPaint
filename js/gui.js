@@ -339,9 +339,9 @@ function GUI_CLASS() {
 			document.getElementById('resize-wh').style.display = "none";
 		}
 		else {
-			document.getElementById('resize-w').style.display = "block";
-			document.getElementById('resize-h').style.display = "block";
-			document.getElementById('resize-wh').style.display = "block";
+			document.getElementById('resize-w').style.display = "none";
+            document.getElementById('resize-h').style.display = "none";
+            document.getElementById('resize-wh').style.display = "none";
 		}
 
 		if (scroll != undefined){
