@@ -27,12 +27,12 @@ function FILE_CLASS() {
 	 * save types config
 	 */
 	this.SAVE_TYPES = [
-		"PNG - Portable Network Graphics",	//default
-		"JPG - JPG/JPEG Format",		//autodetect on photos where png useless?
-		"JSON - Full layers data",		//aka PSD
-		"GIF - Graphics Interchange Format",//animated GIF
-		"WEBP - Weppy File Format",		//chrome only
-		"BMP - Windows Bitmap",			//firefox only
+        "JPG - JPG/JPEG Format",		//autodetect on photos where png useless?
+//		"PNG - Portable Network Graphics",	//default
+	//	"JSON - Full layers data",		//aka PSD
+		//"GIF - Graphics Interchange Format",//animated GIF
+//		"WEBP - Weppy File Format",		//chrome only
+		//"BMP - Windows Bitmap",			//firefox only
 		];
 	//new
 	this.file_new = function () {
@@ -244,7 +244,7 @@ function FILE_CLASS() {
 		POP.add({name: "name", title: "File name:", value: this.SAVE_NAME});
 		POP.add({name: "type", title: "Save as type:", values: this.SAVE_TYPES, value: save_default, onchange: "FILE.save_dialog_onchange(this)"});
 		POP.add({name: "quality", title: "Quality (jpeg):", value: 90, range: [1, 100], onchange: "FILE.save_dialog_onchange(this)"});
-		POP.add({name: "delay", title: "Gif delay (in ms):", value: 500});
+		//POP.add({name: "delay", title: "Gif delay (in ms):", value: 500});
 		POP.add({name: "layers", title: "Save layers:", values: ['All', 'Selected'], onchange: "FILE.save_dialog_onchange(this)"});
 		POP.add({name: "calc_size", title: "Show file size:", values: ['No', 'Yes'], value: calc_size_value, onchange: "FILE.save_dialog_onchange(this)"});
 		POP.add({title: "File size:", html: '<span id="file_size">-</span>'});
@@ -664,7 +664,6 @@ function FILE_CLASS() {
 		//save settings
 		settings = {
 			color: COLOR,
-			active_tool: DRAW.active_tool,
 			zoom: GUI.ZOOM,
 		};
 		settings = JSON.stringify(settings);
@@ -692,9 +691,6 @@ function FILE_CLASS() {
 		//load color
 		COLOR = settings.color;
 		GUI.sync_colors();
-		
-		//load active tool
-		GUI.action(settings.active_tool);
 		
 		//load zoom
 		GUI.zoom(settings.zoom, false);
